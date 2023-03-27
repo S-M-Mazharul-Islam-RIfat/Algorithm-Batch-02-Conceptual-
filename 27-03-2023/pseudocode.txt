@@ -1,0 +1,35 @@
+
+/*
+u -> v
+
+if d[u] + c(u, v) < d[v]:
+    d[v] = d[u] + c(u, v)
+
+*/
+
+// time complexity -> O(n^2)
+
+- create a distance array "d"
+- initialize all values of "d" to infinity 
+- d[src] = 0
+- create a visited array and mark all nodes as unvisited
+- pq(min heap)
+- pq.push({0,src});
+
+-while(!pq.empty()) O(E)
+    - node = front element of pq
+    - pq.pop(); O(log E)
+    - if(visited[node]) continue;
+
+    - visited[node] = 1
+    - for all adj_node of node: O(E)
+        - if d[node] + c(node, adj_node) < d[adj_node]:
+            - d[adj_node] = d[node] + c(node, adj_node)
+            - pq.push({d[adj_node],adj_node}); O(log E)
+     
+-
+- O(E log E) + O(E log E)
+- O(E log E)  -> Edge=V^2
+- O(E log |V^2|)
+- O(2 E log V)
+- O (E log V)
