@@ -7,7 +7,6 @@ if d[u] + c(u, v) < d[v]:
 
 */
 
-// time complexity -> O(n^2)
 
 - create a distance array "d"
 - initialize all values of "d" to infinity 
